@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Final</title>
+  <link rel="stylesheet" href="main.css">
+
+  <style>
+    #pw-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.75);display:flex;align-items:center;justify-content:center;z-index:9999}
+    #pw-box{background:#fff;padding:24px;border-radius:8px;max-width:320px;width:90%;box-shadow:0 6px 24px rgba(0,0,0,0.3);text-align:center}
+    #pw-box input{width:100%;padding:8px;margin-top:12px;margin-bottom:8px;font-size:16px}
+    #pw-box button{padding:8px 12px;font-size:16px}
+  </style>
+</head>
+
+<body>
+    <div id="pw-overlay" aria-hidden="false">
+    <div id="pw-box" role="dialog" aria-modal="true" aria-labelledby="pw-title">
+      <h2 id="pw-title">Sekinro ustoz, last but not least, bir sinifimizani eslili ╰(*°▽°*)╯!</h2>
+      <form id="pw-form">
+        <input id="pw-input" type="password" placeholder="Password"autocomplete="current-password" required />
+        <div>
+          <button class="clasmates" type="submit"><img width="100px" height="140px" src="htt" alt="internetiz ishlamayapti"></button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    (function(){
+      const PASSWORD = 'The united classmates of high school'; 
+      const overlay = document.getElementById('pw-overlay');
+      const form = document.getElementById('pw-form');
+      const input = document.getElementById('pw-input');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        if(input.value === PASSWORD){
+          overlay.style.display = 'none';
+        } else {
+          input.value = '';
+          input.focus();
+          alert('Incorrect password');
+        }
+      });
+
+      document.addEventListener('focus', function(ev){
+        if(overlay.style.display !== 'none' && !overlay.contains(ev.target)) ev.stopPropagation();
+      }, true);
+    })();
+  </script>
+
+<div class="container">
+  <video width="800" height="600" controls>
+    <source src="pre final.mp4" type="video/mp4">
+  </video>
+</div>
+
+</body>
+</html>
